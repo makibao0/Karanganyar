@@ -4,9 +4,7 @@ import {
   Button,
   Center,
   ChakraProvider,
-  Flex,
   FormControl,
-  FormLabel,
   HStack,
   Heading,
   Icon,
@@ -18,15 +16,14 @@ import {
   ModalBody,
   ModalContent,
   ModalFooter,
-  ModalHeader,
   ModalOverlay,
   Text,
   VStack,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Phone } from "lucide-react";
 import React, { useEffect } from "react";
 import { BASECOLOR } from "./color";
-import { CircleX, Phone, XCircle } from "lucide-react";
 
 const LandingPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
