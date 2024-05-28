@@ -155,8 +155,26 @@ const LandingPage = () => {
                     name="message"
                   />
                 </FormControl>
-                <Button h={14} bg={BASECOLOR.yellow} w={"100%"} type="submit">
-                  <Text color={"white"}>Dapatkan Penawaran</Text>
+                <Button
+                  h={14}
+                  bg={BASECOLOR.yellow}
+                  w={"100%"}
+                  type="submit"
+                  onClick={() => {
+                    const url = `https://api.whatsapp.com/send?phone=6282210551138${
+                      document.getElementById("email").value
+                    }&text=Hai saya %20${
+                      document.getElementById("name").value
+                    }%20${
+                      document.getElementById("message").value
+                    }%20dan%20saya%20tertarik%20menghubungi%20kamu%20untuk%20bertanyakan%20seputar%20rumah%20di%20Karanganyar%20Residence%20${
+                      document.getElementById("message").value
+                    }`;
+
+                    window.open(url, "_blank");
+                  }}
+                >
+                  <Text color={"white"}>Kirim via WhatsApp</Text>
                 </Button>
               </Box>
             </Box>
