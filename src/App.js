@@ -295,7 +295,7 @@ const LandingPage = () => {
         </Text>
       </Box>
 
-      <Modal size="md" isOpen={!isOpen} onClose={onClose}>
+      <Modal size="md" isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalBody bg={"rgba(255,255,255,0)"}>
