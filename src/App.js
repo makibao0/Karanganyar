@@ -172,7 +172,7 @@ const LandingPage = () => {
                     window.open(url, "_blank");
                   }}
                 >
-                  <Text color={"white"}>Kirim via WhatsApp</Text>
+                  <Text color={"white"}>Dapatkan Penawaran</Text>
                 </Button>
               </Box>
             </Box>
