@@ -1,4 +1,5 @@
 import {
+  AspectRatio,
   Box,
   Button,
   Center,
@@ -25,7 +26,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { BASECOLOR } from "./color";
-import { CircleX, XCircle } from "lucide-react";
+import { CircleX, Phone, XCircle } from "lucide-react";
 
 const LandingPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -75,6 +76,21 @@ const LandingPage = () => {
         py={5}
         bgGradient={`linear(to-l, ${BASECOLOR.green},${BASECOLOR.blue})`}
       >
+        <Button
+          zIndex={10}
+          rounded={"full"}
+          bg={BASECOLOR.yellow}
+          position={"fixed"}
+          bottom={5}
+          right={5}
+          h={12}
+          colorScheme="primary"
+          onClick={() => {
+            window.open("https://linktr.ee/karanganyarresidence.id", "_blank");
+          }}
+        >
+          <Icon as={Phone} />
+        </Button>
         <Center flex={1}>
           <VStack justifyContent={"center"} alignItems={"center"}>
             <Image
@@ -83,22 +99,23 @@ const LandingPage = () => {
               alt="Dan Abramov"
             />
             <Text
+              mt={5}
               color={"white"}
               textAlign={"center"}
-              fontSize={"2xl"}
+              fontSize={"3xl"}
               fontWeight={"bold"}
             >
-              Dari pada ngontrak lebih baik cicil rumah
+              {`Dari pada ngontrak lebih baik cicil rumah`.toUpperCase()}
             </Text>
             <Text
               color={"white"}
               textAlign={"center"}
-              fontSize={"2xl"}
+              fontSize={"3xl"}
               fontWeight={"bold"}
             >
-              DP 0% Cicilan 1Jt
+              {`DP 0% Cicilan 1Jt`.toUpperCase()}
             </Text>
-            <Box>
+            <Box mt={5}>
               <Box
                 w={"400px"}
                 p={5}
@@ -106,56 +123,44 @@ const LandingPage = () => {
                 rounded={"md"}
                 shadow={"md"}
               >
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    const formData = new FormData(e.currentTarget);
-                    console.log(
-                      formData.get("name"),
-                      formData.get("email"),
-                      formData.get("message")
-                    );
-                  }}
-                >
-                  <FormControl mb={5} id="name" isRequired>
-                    <Input
-                      h={20}
-                      placeholder="Nama Lengkap"
-                      bg={"white"}
-                      type="text"
-                      name="name"
-                    />
-                  </FormControl>
-                  <FormControl mb={5} id="email" isRequired>
-                    <Input
-                      h={20}
-                      placeholder="No Whatsapp"
-                      bg={"white"}
-                      type="number"
-                      name="email"
-                    />
-                  </FormControl>
-                  <FormControl mb={5} id="message" isRequired>
-                    <Input
-                      h={20}
-                      placeholder="Email"
-                      type="email"
-                      bg={"white"}
-                      name="message"
-                    />
-                  </FormControl>
-                  <FormControl mb={5} id="message" isRequired>
-                    <Input
-                      h={20}
-                      placeholder="Kota Domisili"
-                      bg={"white"}
-                      name="message"
-                    />
-                  </FormControl>
-                  <Button h={20} bg={BASECOLOR.yellow} w={"100%"} type="submit">
-                    <Text color={"white"}>Dapatkan Penawaran</Text>
-                  </Button>
-                </form>
+                <FormControl mb={5} id="name" isRequired>
+                  <Input
+                    h={12}
+                    placeholder="Nama Lengkap"
+                    bg={"white"}
+                    type="text"
+                    name="name"
+                  />
+                </FormControl>
+                <FormControl mb={5} id="email" isRequired>
+                  <Input
+                    h={12}
+                    placeholder="No Whatsapp"
+                    bg={"white"}
+                    type="number"
+                    name="email"
+                  />
+                </FormControl>
+                <FormControl mb={5} id="message" isRequired>
+                  <Input
+                    h={12}
+                    placeholder="Email"
+                    type="email"
+                    bg={"white"}
+                    name="message"
+                  />
+                </FormControl>
+                <FormControl mb={5} id="message" isRequired>
+                  <Input
+                    h={12}
+                    placeholder="Kota Domisili"
+                    bg={"white"}
+                    name="message"
+                  />
+                </FormControl>
+                <Button h={14} bg={BASECOLOR.yellow} w={"100%"} type="submit">
+                  <Text color={"white"}>Dapatkan Penawaran</Text>
+                </Button>
               </Box>
             </Box>
           </VStack>
@@ -208,53 +213,6 @@ const LandingPage = () => {
                 </ListItem>
                 <ListItem>
                   <Text>(Upcoming) Food Night Market</Text>
-                </ListItem>
-              </List>
-              <Heading fontSize={"lg"} fontWeight={"semibold"} mb={3} mt={6}>
-                Fasilitas sekitar Karang Anyar Residence
-              </Heading>
-              <List spacing={3}>
-                <ListItem>
-                  <Text>Angkutan Umum 24 jam (akses lgsg)</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Stasiun Cikarang</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Terminal Cikarang</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>RS Central Medika</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Puskemas Cikarang</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Polsek Sukatani</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>SMAN 1 Cikarang Utara</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>SMPN 1 Cikarang Utara</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>SGC Mall</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>Lotte Grosir Cikarang</Text>
-                </ListItem>
-                <ListItem>
-                  <Text>
-                    Kawasan Industri terbesar seasia tenggara (Jababeka, EJIP,
-                    MM2100)
-                  </Text>
-                </ListItem>
-                <ListItem>
-                  <Text>
-                    Akses pintu tol Cikarang Utara / Gabus / Telaga Asih
-                    (estimasi 30 menit)
-                  </Text>
                 </ListItem>
               </List>
             </Box>
@@ -314,6 +272,13 @@ const LandingPage = () => {
             </VStack>
           ))}
         </VStack>
+        <AspectRatio my={5} maxW="560px" w={"full"} ratio={1}>
+          <iframe
+            title="naruto"
+            src="https://www.youtube.com/embed/WeOB4zI-b10?si=TkPwAkqyGaE0LIvT"
+            allowFullScreen
+          />
+        </AspectRatio>
       </Box>
       <Box
         bottom={0}
@@ -324,11 +289,13 @@ const LandingPage = () => {
         alignItems={"center"}
         justifyContent={"space-between"}
       >
-        <Image src={require("../src/assets/images/logoWhite.png")} h={20} />
-        <Text>Copyright 2024 @Karang Anyar Residence</Text>
+        <Image src={require("../src/assets/images/logoWhite.png")} h={10} />
+        <Text fontSize={12} mt={5}>
+          Copyright 2024 @Karang Anyar Residence
+        </Text>
       </Box>
 
-      <Modal size="md" isOpen={isOpen} onClose={onClose}>
+      <Modal size="md" isOpen={!isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalBody bg={"rgba(255,255,255,0)"}>
