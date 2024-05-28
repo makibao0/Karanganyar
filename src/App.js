@@ -165,9 +165,7 @@ const LandingPage = () => {
                       document.getElementById("name").value
                     }%20${
                       document.getElementById("message").value
-                    }%20dan%20saya%20tertarik%20menghubungi%20kamu%20untuk%20bertanyakan%20seputar%20rumah%20di%20Karanganyar%20Residence%20${
-                      document.getElementById("message").value
-                    }`;
+                    }%20dan%20saya%20tertarik%20menghubungi%20kamu%20untuk%20bertanyakan%20seputar%20rumah%20di%20Karanganyar%20Residence`;
 
                     window.open(url, "_blank");
                   }}
