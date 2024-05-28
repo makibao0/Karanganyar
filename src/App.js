@@ -161,9 +161,7 @@ const LandingPage = () => {
                   w={"100%"}
                   type="submit"
                   onClick={() => {
-                    const url = `https://api.whatsapp.com/send?phone=6282210551138${
-                      document.getElementById("email").value
-                    }&text=Hai saya %20${
+                    const url = `https://api.whatsapp.com/send?phone=6282210551138&text=Hai saya %20${
                       document.getElementById("name").value
                     }%20${
                       document.getElementById("message").value
