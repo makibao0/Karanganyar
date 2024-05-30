@@ -65,7 +65,7 @@ const LandingPage = () => {
        - 1 garage 
        - Lokasi strategis di dekat tol Cikarang`,
       image: require("../src/assets/images/new.jpeg"),
-      denah: require("../src/assets/images/subsidi3x6.png"),
+      denah: require("../src/assets/images/subsidiDenah.png"),
     },
   ];
   return (
