@@ -41,6 +41,7 @@ const LandingPage = () => {
        - 1 garage 
        - Lokasi strategis di dekat tol Cikarang`,
       image: require("../src/assets/images/Ametys.jpg"),
+      denah: require("../src/assets/images/amethys.png"),
     },
     {
       title: "Type 33-65",
@@ -52,6 +53,7 @@ const LandingPage = () => {
        - 1 garage 
        - Lokasi strategis di dekat tol Cikarang`,
       image: require("../src/assets/images/Emerald.jpg"),
+      denah: require("../src/assets/images/emerald.png"),
     },
     {
       title: "Type 30-60",
@@ -63,6 +65,7 @@ const LandingPage = () => {
        - 1 garage 
        - Lokasi strategis di dekat tol Cikarang`,
       image: require("../src/assets/images/new.jpeg"),
+      denah: require("../src/assets/images/subsidi3x6.png"),
     },
   ];
   return (
@@ -258,7 +261,16 @@ const LandingPage = () => {
               bg={"rgba(255,255,255,0)"}
               rounded={"md"}
             >
-              <Image src={item.image} />
+              <HStack flex={1}>
+                {/* <Image
+                  aspectRatio={"1 / 1.2"}
+                  objectFit={"cover"}
+                  w={"50%"}
+                  h="100%"
+                  src={item.image}
+                /> */}
+                <Image src={item.denah} />
+              </HStack>
 
               <HStack
                 borderBottomRightRadius={"xl"}
