@@ -21,9 +21,11 @@ import {
   VStack,
   useDisclosure,
 } from "@chakra-ui/react";
-import { Phone } from "lucide-react";
+import { ArrowLeft, ArrowRight, Phone } from "lucide-react";
 import React, { useEffect } from "react";
 import { BASECOLOR } from "./color";
+import CountDownTimer from "./component/CountDownTimer";
+import "./css/app.css";
 
 const LandingPage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -79,7 +81,7 @@ const LandingPage = () => {
         <Button
           zIndex={10}
           rounded={"full"}
-          bg={BASECOLOR.yellow}
+          bg={"green"}
           position={"fixed"}
           bottom={5}
           right={5}
@@ -89,7 +91,12 @@ const LandingPage = () => {
             window.open("https://linktr.ee/karanganyarresidence.id", "_blank");
           }}
         >
-          <Icon as={Phone} />
+          <Image
+            src={require("../src/assets/images/wa.webp")}
+            alt="Alternate Text"
+            w={10}
+            h={10}
+          />
         </Button>
         <Center flex={1}>
           <VStack justifyContent={"center"} alignItems={"center"}>
@@ -107,14 +114,97 @@ const LandingPage = () => {
             >
               {`Dari pada ngontrak lebih baik cicil rumah`.toUpperCase()}
             </Text>
-            <Text
-              color={"white"}
-              textAlign={"center"}
-              fontSize={"3xl"}
-              fontWeight={"bold"}
-            >
-              {`DP 0% Cicilan 1Jt`.toUpperCase()}
-            </Text>
+            <HStack>
+              <VStack h={"20vh"}>
+                <Text
+                  mt={10}
+                  color={"white"}
+                  textAlign={"center"}
+                  fontSize={"md"}
+                  fontWeight={"bold"}
+                >
+                  {`CICILAN`.toUpperCase()}
+                </Text>
+                <Text
+                  color={"white"}
+                  textAlign={"center"}
+                  fontSize={"md"}
+                  fontWeight={"bold"}
+                >
+                  {`HANYA`.toUpperCase()}
+                </Text>
+              </VStack>
+              <HStack>
+                <Text
+                  mt={10}
+                  color={"white"}
+                  textAlign={"center"}
+                  fontSize={"xl"}
+                  fontWeight={"bold"}
+                >
+                  {`Rp`.toUpperCase()}
+                </Text>
+                <Text
+                  mt={10}
+                  color={"white"}
+                  textAlign={"center"}
+                  fontSize={"30vw"}
+                  fontWeight={"bold"}
+                >
+                  {`1`.toUpperCase()}
+                </Text>
+                <Text
+                  mt={10}
+                  color={"white"}
+                  textAlign={"center"}
+                  fontSize={"xl"}
+                  fontWeight={"bold"}
+                >
+                  {`Jtan`.toUpperCase()}
+                </Text>
+              </HStack>
+            </HStack>
+            <HStack>
+              <VStack borderRightWidth={5} pr={5}>
+                <Text
+                  color={"white"}
+                  textAlign={"center"}
+                  fontSize={"2xl"}
+                  fontWeight={"bold"}
+                >
+                  {`UNIT READY`.toUpperCase()}
+                </Text>
+                <Text
+                  color={"white"}
+                  textAlign={"center"}
+                  fontSize={"2xl"}
+                  fontWeight={"bold"}
+                >
+                  {`STOCK!`.toUpperCase()}
+                </Text>
+              </VStack>
+
+              <VStack pl={5}>
+                <Text
+                  color={"white"}
+                  textAlign={"center"}
+                  fontSize={"12vw"}
+                  fontWeight={"bold"}
+                >
+                  {`DP`.toUpperCase()}
+                </Text>
+                <Text
+                  mt={-5}
+                  color={"white"}
+                  textAlign={"center"}
+                  fontSize={"12vw"}
+                  fontWeight={"bold"}
+                >
+                  {`0%`.toUpperCase()}
+                </Text>
+              </VStack>
+            </HStack>
+
             <Box mt={5}>
               <Box
                 w={"400px"}
@@ -123,6 +213,25 @@ const LandingPage = () => {
                 rounded={"md"}
                 shadow={"md"}
               >
+                <Text
+                  textAlign={"center"}
+                  mb={5}
+                  color={BASECOLOR.yellow}
+                  fontWeight={"bold"}
+                  fontSize={"3xl"}
+                >
+                  SISA 10 UNIT TERAKHIR!
+                </Text>
+                <Text
+                  textAlign={"center"}
+                  mb={5}
+                  color="white"
+                  fontWeight={"bold"}
+                  fontSize={"lg"}
+                >
+                  Segera Hubungi Marketing Kami Disini
+                </Text>
+                <CountDownTimer />
                 <FormControl mb={5} id="name" isRequired>
                   <Input
                     h={12}
@@ -234,24 +343,35 @@ const LandingPage = () => {
         </VStack>
       </Center>
       <Box w={"100%"} my={5} px={5} bg={"rgba(255,255,255,0.2)"} rounded={"md"}>
-        <Box
+        <Button
+          onClick={() => {
+            window.open("https://linktr.ee/karanganyarresidence.id", "_blank");
+          }}
+          colorScheme="teal"
+          flex={1}
+          w={"100%"}
+          h={20}
           mb={5}
           borderRadius={"xl"}
           bgGradient={
             "linear(to-r, " + BASECOLOR.blue + ", " + BASECOLOR.green + ")"
           }
         >
-          <Text
-            textAlign={"center"}
-            py={5}
-            fontSize={"2xl"}
-            fontWeight={"bold"}
-            size="md"
-            color="white"
-          >
-            Spesial Offer
-          </Text>
-        </Box>
+          <HStack flex={1} justify={"center"} alignItems={"center"}>
+            <Icon width={22} height={22} as={ArrowRight} color="white" />
+            <Text
+              textAlign={"center"}
+              py={5}
+              fontSize={"2xl"}
+              fontWeight={"bold"}
+              size="md"
+              color="white"
+            >
+              Special Offer
+            </Text>
+            <Icon width={22} height={22} as={ArrowLeft} color="white" />
+          </HStack>
+        </Button>
         <VStack spacing={5}>
           {dataProyek.map((item, index) => (
             <VStack
@@ -298,7 +418,7 @@ const LandingPage = () => {
         <AspectRatio my={5} maxW="560px" w={"full"} ratio={1}>
           <iframe
             title="naruto"
-            src="https://www.youtube.com/embed/WeOB4zI-b10?si=TkPwAkqyGaE0LIvT"
+            src="https://youtube.com/embed/qUGOj3E3d4k?si=a5AkpkxqrosSWWZE"
             allowFullScreen
           />
         </AspectRatio>
